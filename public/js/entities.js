@@ -10,11 +10,11 @@ export function loadEntities() {
         return factory => entityFactories[name] = factory;
     }
 
-
     return Promise.all([
         loadMario().then(addAs('mario')),
         loadGoomba().then(addAs('goomba')),
         loadKoopa().then(addAs('koopa')),
+        loadGoomba().then(addAs('goomba')), // lets try and add it!!!
     ])
     .then(() => entityFactories);
 }

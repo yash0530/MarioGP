@@ -8,7 +8,7 @@ import Stomper from '../traits/Stomper.js';
 import {loadSpriteSheet} from '../loaders.js';
 
 const SLOW_DRAG = 1/1000;
-const FAST_DRAG = 1/5000;
+const FAST_DRAG = 1/10000;
 
 export function loadMario() {
     return loadSpriteSheet('mario')

@@ -25,7 +25,9 @@ async function main(canvas) {
         loadEntities(),
         loadFont(),
     ]);
+    // entityFactory => All the entities
 
+    // returns a function which can be used to load level with all entities
     const loadLevel = await createLevelLoader(entityFactory);
 
     const level = await loadLevel('1-1');
