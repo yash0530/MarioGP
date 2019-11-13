@@ -34,24 +34,25 @@ async function main(canvas) {
 
     const camera = new Camera();
 
+    // Mario Setup
     const mario = entityFactory.mario();
 
     const playerEnv = createPlayerEnv(mario);
     level.entities.add(playerEnv);
 
-
+    // Level Setup
     level.comp.layers.push(createCollisionLayer(level));
     level.comp.layers.push(createDashboardLayer(font, playerEnv));
 
+    // Setup Keyboard Controls
     const input = setupKeyboard(mario);
     input.listenTo(window);
 
+    // Timer
     const timer = new Timer(1/60);
     timer.update = function update(deltaTime) {
         level.update(deltaTime);
-
         camera.pos.x = Math.max(0, mario.pos.x - 100);
-
         level.comp.draw(context, camera);
     }
 
