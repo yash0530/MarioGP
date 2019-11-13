@@ -14,7 +14,6 @@ export function loadEntities() {
         loadMario().then(addAs('mario')),
         loadGoomba().then(addAs('goomba')),
         loadKoopa().then(addAs('koopa')),
-        loadGoomba().then(addAs('goomba')), // lets try and add it!!!
     ])
     .then(() => entityFactories);
 }

@@ -15,6 +15,8 @@ export default class KeyboardState {
     }
 
     handleEvent(event) {
+        // key pressed .............................
+        console.log(event.code);
         const {code} = event;
 
         if (!this.keyMap.has(code)) {
